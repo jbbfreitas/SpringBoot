@@ -1,0 +1,27 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="jbbf" id="exclui_departmento">
+		<dropTable cascadeConstraints="true" schemaName="public"
+			tableName="departmento" />
+	</changeSet>
+	<changeSet id="cria_departamento" author="jbbf">
+		<createTable tableName="departamento">
+			<column name="id" type="bigint"
+				autoIncrement="${autoIncrement}">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="nome" type="varchar(50)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet id="tag-1.1" author="jbbf">
+		<tagDatabase tag="1.1" />
+	</changeSet>
+
+</databaseChangeLog>

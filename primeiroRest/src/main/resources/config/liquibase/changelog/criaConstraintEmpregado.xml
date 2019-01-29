@@ -1,0 +1,26 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="cria_coluna_departamento_id" author="jbbf">
+		<addColumn  schemaName="public" tableName="empregado">
+			<column name="departamento_id" type="bigint" />
+		</addColumn>
+	</changeSet>
+
+
+	<changeSet author="jbbf" id="cria_contraints_empregado">
+		<addForeignKeyConstraint
+			baseColumnNames="departamento_id" baseTableName="empregado"
+			constraintName="fk_departamento" referencedColumnNames="id"
+			referencedTableName="departamento" />
+	</changeSet>
+
+
+	<changeSet id="tag-1.2" author="jbbf">
+		<tagDatabase tag="1.2" />
+	</changeSet>
+
+</databaseChangeLog>

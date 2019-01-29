@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Empregado.
+    -->
+    <changeSet id="20181223134100-2" author="jbbf">
+        
+        <addForeignKeyConstraint baseColumnNames="municipio_nascimento_id"
+                                 baseTableName="empregado"
+                                 constraintName="fk_empregado_municipio_nascimento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipio"/>
+
+        <addForeignKeyConstraint baseColumnNames="municipio_residencial_id"
+                                 baseTableName="empregado"
+                                 constraintName="fk_empregado_municipio_residencial_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipio"/>
+
+        <addForeignKeyConstraint baseColumnNames="departamento_id"
+                                 baseTableName="empregado"
+                                 constraintName="fk_empregado_departamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="departamento"/>
+
+    </changeSet>
+</databaseChangeLog>

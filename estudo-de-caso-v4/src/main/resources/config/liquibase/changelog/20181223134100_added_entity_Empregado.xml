@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Empregado.
+    -->
+    <changeSet id="20181223134100-1" author="jbbf">
+        <createTable tableName="empregado">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome_empregado" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="data_nascimento" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cpf" type="varchar(11)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="data_admissao" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="data_demissao" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data_obito" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="municipio_nascimento_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="municipio_residencial_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="departamento_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>
