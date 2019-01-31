@@ -607,7 +607,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
    <strong>Listagem 8- Classe DepartamentoServiceImpl.java</strong> 
 </p>
 
-#### Desafio 3:innocent:
+#### Desafio 3 :innocent:
  
 ```
 - Implemente o método para encontrar um Departamento pelo Nome, criado no Desafio 2.
