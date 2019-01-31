@@ -43,4 +43,14 @@ public interface DepartamentoService {
      * @param id the id of the entity
      */
     void delete(Long id);
+    
+    /**
+     * Find Departamento by nomeDepartamento.
+     *
+     * @param nomeDepartamento the name
+     * @return the entity
+     */
+    Optional<Departamento> findByNomeDepartamento(String nomeDepartamento);
+
+    
 }

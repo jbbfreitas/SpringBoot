@@ -77,4 +77,11 @@ public class DepartamentoServiceImpl implements DepartamentoService {
         log.debug("Request to delete Departamento : {}", id);
         departamentoRepository.deleteById(id);
     }
+
+    //Desafio 1 V3
+	@Override
+	public Optional<Departamento> findByNomeDepartamento(String nomeDepartamento) {
+        log.debug("Request to get Departamento : {}", nomeDepartamento);
+        return departamentoRepository.findByNomeDepartamento(nomeDepartamento);
+	}
 }
