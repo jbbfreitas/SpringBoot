@@ -2,6 +2,7 @@ package br.com.abim.ec.service.impl;
 
 import br.com.abim.ec.service.DepartamentoService;
 import br.com.abim.ec.domain.Departamento;
+import br.com.abim.ec.domain.Municipio;
 import br.com.abim.ec.repository.DepartamentoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,10 +79,4 @@ public class DepartamentoServiceImpl implements DepartamentoService {
         departamentoRepository.deleteById(id);
     }
 
-    //Desafio 1 V3
-	@Override
-	public Optional<Departamento> findByNomeDepartamento(String nomeDepartamento) {
-        log.debug("Request to get Departamento : {}", nomeDepartamento);
-        return departamentoRepository.findByNomeDepartamento(nomeDepartamento);
-	}
 }

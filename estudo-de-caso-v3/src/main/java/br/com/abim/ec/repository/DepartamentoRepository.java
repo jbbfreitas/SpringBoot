@@ -1,6 +1,7 @@
 package br.com.abim.ec.repository;
 
 import br.com.abim.ec.domain.Departamento;
+import br.com.abim.ec.domain.Municipio;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,9 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DepartamentoRepository extends JpaRepository<Departamento, Long> {
 
-	//Desafio 1 Baseando-se nos exemplos providos em V2, crie uma `Query` para encontrar um Departamento pelo Nome.
-	
-	Optional<Departamento> findByNomeDepartamento(String nomeDepartamento);	
 	
 	
 	

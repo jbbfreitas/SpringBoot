@@ -1,6 +1,7 @@
 package br.com.abim.ec.service;
 
 import br.com.abim.ec.domain.Departamento;
+import br.com.abim.ec.domain.Municipio;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -44,13 +45,7 @@ public interface DepartamentoService {
      */
     void delete(Long id);
     
-    /**
-     * Find Departamento by nomeDepartamento.
-     *
-     * @param nomeDepartamento the name
-     * @return the entity
-     */
-    Optional<Departamento> findByNomeDepartamento(String nomeDepartamento);
+
 
     
 }

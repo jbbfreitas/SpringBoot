@@ -1148,7 +1148,7 @@ public final class ResponseUtil {
 ```
 - Implemente a seguinte regra de negócio:
 ```
-> "O número máximo de departamentos por estado é 3"
+> "Não pode haver mais de um departamento por municipio"
 
 Passe agora para a implementação [V4](../estudo-de-caso-v4/README.md) do nosso Estudo de Caso.
 
