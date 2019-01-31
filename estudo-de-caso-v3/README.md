@@ -97,7 +97,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>3.4.2</version>
 				<configuration>
-					<propertyFile>config/liquibase/liquibase.properties</propertyFile>
+					<propertyFile>config/liquibase/liquibase.yml</propertyFile>
 					<changeLogFile>config/liquibase/master.xml</changeLogFile>
 				</configuration>
 			</plugin>
