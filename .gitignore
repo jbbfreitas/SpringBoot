@@ -1,0 +1,11 @@
+/.metadata/
+/.recommenders/
+/.class
+estudo-de-caso-v1/.settings/org.eclipse.jdt.apt.core.prefs
+/.pptx
+.pptx
+RestFull_1.pptx
+primeiroRest/.classpath
+primeiroRest/.project
+primeiroRest/.settings/*
+primeiroRest/target/*
