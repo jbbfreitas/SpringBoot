@@ -20,7 +20,7 @@ import java.util.Objects;
 public class Empregado implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+//comentário
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator",sequenceName="hibernate_sequence")
