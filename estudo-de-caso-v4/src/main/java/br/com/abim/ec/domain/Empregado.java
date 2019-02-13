@@ -31,17 +31,14 @@ public class Empregado implements Serializable {
     @Column(name = "nome_empregado", length = 80, nullable = false)
     private String nomeEmpregado;
 
-    @NotNull
-    @Column(name = "data_nascimento", nullable = false)
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
-    @NotNull
     @Size(min = 11, max = 11)
-    @Column(name = "cpf", length = 11, nullable = false)
+    @Column(name = "cpf", length = 11 )
     private String cpf;
 
-    @NotNull
-    @Column(name = "data_admissao", nullable = false)
+    @Column(name = "data_admissao")
     private LocalDate dataAdmissao;
 
     @Column(name = "data_demissao")
@@ -54,13 +51,11 @@ public class Empregado implements Serializable {
     @JsonIgnoreProperties("")
     private Municipio municipioNascimento;
 
-    @ManyToOne(optional = false)
-    @NotNull
+    @ManyToOne
     @JsonIgnoreProperties("")
     private Municipio municipioResidencial;
 
-    @ManyToOne(optional = false)
-    @NotNull
+    @ManyToOne
     @JsonIgnoreProperties("")
     private Departamento departamento;
 

@@ -10,4 +10,6 @@
     <include file="config/liquibase/changelog/20181223134100_added_entity_Empregado.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20181223130816_added_entity_constraints_Departamento.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20181223134100_added_entity_constraints_Empregado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190213200300_added_entity_remove_constraints_Empregado.xml" relativeToChangelogFile="false"/>
+ 
 </databaseChangeLog>
