@@ -207,7 +207,7 @@
    <strong>Listagem 4- master.xml</strong> 
 </p>
 
->Esse arquivo agora inclui uma nova linha para rtirar a constraint da entidade `Empregado`.
+>Esse arquivo agora inclui uma nova linha para retirar a constraint da entidade `Empregado`.
 
 2. Na pasta `src/resources/config/liquibase/changelog`, crie  um novo arquivo, Listagem 5.
 
@@ -471,3 +471,10 @@ public class Empregado implements Serializable {
    <strong>Listagem 6- Empregado.java</strong> 
 </p>
 
+
+3. Se apliacação estiver sendo executada, interrompa-a.
+4. Execute o liquibase para refletir as alterações no banco de dados.
+
+> mvn liquibase:update
+
+5. Verifique no Postgres se as alterações surtiram o efeito desejado
