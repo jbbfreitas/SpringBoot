@@ -52,6 +52,14 @@ public class DepartamentoResource {
         if (departamento.getId() != null) {
             throw new BadRequestAlertException("A new departamento cannot already have an ID", ENTITY_NAME, "idexists");
         }
+//Desafio 2 V3
+        if (!departamentoService.isUniqueDepartamentoInMunicipio(departamento.getMunicipio())) {
+            throw new BadRequestAlertException("Já existe um departamento para esse município", ENTITY_NAME, "departamentoexists");
+        }
+        if (!departamentoService.isUniqueSgilaDepartamento(departamento.getSiglaDepartamento())) {
+            throw new BadRequestAlertException("Esta sigla de departamento já foi utilizada", ENTITY_NAME, "siglaexists");
+        	
+        }
         Departamento result = departamentoService.save(departamento);
         return ResponseEntity.created(new URI("/api/departamentos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -119,6 +127,20 @@ public class DepartamentoResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
     
+ //Desafio 1 V3
+    /**
+     * GET  /departamentos/:nomeDepartamento : get the departamento by nomeDepartamento.
+     *
+     * @param id the id of the departamento to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the departamento, or with status 404 (Not Found)
+     */
+    @GetMapping("/departamentos/nome/{nomeDepartamento}")
+    public ResponseEntity<List<Departamento>>  getDepartamentoByNome(@PathVariable String nomeDepartamento,Pageable pageable) {
+        log.debug("REST request to get Departamento : {}", nomeDepartamento);
+        Page<Departamento> page = departamentoService.findDepartamento(nomeDepartamento,pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/departamentos/nome/");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
 
     
 }

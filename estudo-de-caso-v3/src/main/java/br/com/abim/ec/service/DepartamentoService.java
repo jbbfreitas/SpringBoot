@@ -6,6 +6,7 @@ import br.com.abim.ec.domain.Municipio;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -45,7 +46,29 @@ public interface DepartamentoService {
      */
     void delete(Long id);
     
+    /**
+     * Find Departamento by nomeDepartamento.
+     *
+     * @param nomeDepartamento the name
+     * @return the entity
+     */
+   Page<Departamento> findDepartamento(String nomeDepartamento,Pageable pageable);
+    
+    
+    /**
+     * Only one Departamento is permitted by Municpio
+     * 
+     * @param municipio
+     * @return True or False
+     */
+    Boolean isUniqueDepartamentoInMunicipio(Municipio municipio);
 
 
+    /**
+     * 
+     * @param sigla
+     * @return True or False
+     */
+    Boolean isUniqueSgilaDepartamento(String sigla);
     
 }

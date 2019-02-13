@@ -29,5 +29,5 @@ server:
 
 logging:
     level:
-        ROOT: DEBUG
+        ROOT: ERROR
         br.com.abim.ec: DEBUG

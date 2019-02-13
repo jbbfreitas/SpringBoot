@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -79,4 +80,28 @@ public class DepartamentoServiceImpl implements DepartamentoService {
         departamentoRepository.deleteById(id);
     }
 
+    //Desafio 1 V3
+	@Override
+	public Page<Departamento> findDepartamento(String nomeDepartamento,Pageable pageable) {
+        log.debug("Request to get Departamento : {}", nomeDepartamento);
+        return departamentoRepository.findByNomeDepartamento(nomeDepartamento,pageable);
+//      return departamentoRepository.findByNomeDepartamentoIgnoreCaseContaining(nomeDepartamento,pageable);
+	}
+
+	
+	//Desafio 2 V3
+	@Override
+	public Boolean isUniqueDepartamentoInMunicipio(Municipio municipio) {
+		Integer numDepto= departamentoRepository.countDepartamentoByMunicipio(municipio);
+		if (numDepto >=1) {
+			return false;
+			
+		}else
+			return true;
+	}
+
+	@Override
+	public Boolean isUniqueSgilaDepartamento(String sigla) {
+		return (departamentoRepository.findDepartamentoBySiglaDepartamento(sigla)==null);
+	}
 }

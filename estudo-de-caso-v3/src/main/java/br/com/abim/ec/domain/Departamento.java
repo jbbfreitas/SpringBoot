@@ -1,5 +1,6 @@
 package br.com.abim.ec.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -16,6 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "departamento")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+//@JsonIgnoreProperties({"municipio"})
 public class Departamento implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,11 +43,10 @@ public class Departamento implements Serializable {
     private String cnpj;
 
     @ManyToOne
-    @JsonIgnoreProperties("")
+//    @JsonIgnore()
     private Municipio municipio;
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
-    public Long getId() {
+     public Long getId() {
         return id;
     }
 
