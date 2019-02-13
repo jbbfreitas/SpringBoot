@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<changeSet author="jbbf"
+		id="201902132000300-2">
+		<dropNotNullConstraint columnDataType="date" columnName="data_nascimento" schemaName="public" tableName="empregado" />
+	</changeSet>
+	<changeSet author="jbbf"
+		id="201902132005300-2">
+		<dropNotNullConstraint columnDataType="date" columnName="data_admissao" schemaName="public" tableName="empregado" />
+		<dropNotNullConstraint columnDataType="bigint" columnName="municipio_residencial_id" schemaName="public" tableName="empregado" />
+		<dropNotNullConstraint columnDataType="bigint" columnName="departamento_id" schemaName="public" tableName="empregado" />
+		<dropNotNullConstraint columnDataType="varchar(11)" columnName="cpf" schemaName="public" tableName="empregado" />
+	</changeSet>
+
+
+</databaseChangeLog>
